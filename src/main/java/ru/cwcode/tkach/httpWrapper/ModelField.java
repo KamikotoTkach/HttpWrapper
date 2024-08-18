@@ -1,12 +1,12 @@
-package ru.cwcode.tkach;
+package ru.cwcode.tkach.httpWrapper;
 
 import java.util.Optional;
 
 public class ModelField<T> {
-  String key;
-  Class<T> type;
-  ModelObject modelObject;
-  boolean required = false;
+  protected String key;
+  protected Class<T> type;
+  protected ModelObject modelObject;
+  protected boolean required = false;
   
   public ModelField(String key, Class<T> type, ModelObject modelObject, boolean required) {
     this(key, type, modelObject);
@@ -28,7 +28,7 @@ public class ModelField<T> {
     modelObject.set(key, value);
   }
   
-  protected Optional<T> getSafe() {
+  public Optional<T> getSafe() {
     if (has()) {
       return Optional.of(get());
     }
@@ -36,7 +36,7 @@ public class ModelField<T> {
     return Optional.empty();
   }
   
-  protected boolean has() {
+  public boolean has() {
     Object value;
     return (value = get()) != null && type.isInstance(value);
   }

@@ -1,4 +1,4 @@
-package ru.cwcode.tkach;
+package ru.cwcode.tkach.httpWrapper;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

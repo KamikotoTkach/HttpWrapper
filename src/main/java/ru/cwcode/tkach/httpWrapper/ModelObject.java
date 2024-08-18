@@ -1,4 +1,4 @@
-package ru.cwcode.tkach;
+package ru.cwcode.tkach.httpWrapper;
 
 import org.jetbrains.annotations.Nullable;
 
