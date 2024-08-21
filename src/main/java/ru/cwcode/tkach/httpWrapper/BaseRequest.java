@@ -1,5 +1,7 @@
 package ru.cwcode.tkach.httpWrapper;
 
+import lombok.Getter;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -14,6 +16,7 @@ public class BaseRequest<T extends BaseRequest<T, R>, R extends BaseResponse<R>>
   protected final LinkedHashMap<String, String> headers = new LinkedHashMap<>();
   protected final LinkedHashMap<String, Object> body = new LinkedHashMap<>();
   
+  @Getter
   protected final LinkedHashMap<Integer, Class<? extends ModelObject>> responseModels = new LinkedHashMap<>();
   
   public BaseRequest(String method, String url, Class<? extends R> responseClass) {
