@@ -52,6 +52,6 @@ public class ModelObject implements ModelSerializeable {
   
   @Override
   public String toString() {
-    return data.toString();
+    return serialize().toString();
   }
 }
