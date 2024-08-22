@@ -5,7 +5,7 @@ import lombok.Getter;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class BaseRequest<T extends BaseRequest<T, R>, R extends BaseResponse<R>> implements ModelSerializeable {
+public class BaseRequest<T extends BaseRequest<T, R>, R extends BaseResponse<R>> implements ModelSerializable {
   protected final Class<? extends R> responseClass;
   protected final T t = (T) this;
   
@@ -50,7 +50,7 @@ public class BaseRequest<T extends BaseRequest<T, R>, R extends BaseResponse<R>>
     LinkedHashMap<String, Object> result = new LinkedHashMap<>();
     
     body.forEach((key, object) -> {
-      if (object instanceof ModelSerializeable inner) {
+      if (object instanceof ModelSerializable inner) {
         result.putAll(inner.serialize());
       } else {
         result.put(key, object);

@@ -2,6 +2,6 @@ package ru.cwcode.tkach.httpWrapper;
 
 import java.util.Map;
 
-public interface ModelSerializeable {
+public interface ModelSerializable {
   Map<String, Object> serialize();
 }
